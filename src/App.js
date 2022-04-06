@@ -1,20 +1,20 @@
-
+import uniqid from 'uniqid';
 import './App.css';
 import React, { useState } from "react";
-import General from './components/general'
-import Education from './components/education'
-import Work from './components/work'
+import General from './components/general';
+import Education from './components/education';
+import Work from './components/work';
 
 function App() {
 
 //Initial state with all objects, keys, empty values and arrays to push / display from
-  const [ information, setInfo ] = useState({ general:{ firstlast:'',email:'',phone:'' }, education:{ school:'',major:'' }, work:{ company:'' }, arrayG: [], arrayE: [], arrayW: []})
+  const [ information, setInfo ] = useState({ general:{ identify: uniqid(),firstlast:'',email:'',phone:'' }, education:{ identify: uniqid(),school:'',major:'' }, work:{ identify: uniqid(),company:'' }, arrayG: [], arrayE: [], arrayW: []})
 
 
 //Takes any input to sort properly to its designated spot based on name / id 
   const changeInfo = (e) => {
     const id = e.target;
-    setInfo({...information,[id.id]:{...information[id.id],[id.name]: id.value }})
+    setInfo({...information,[id.id]:{...information[id.id],[id.name]: id.value, identify:information[id.id].identify}})
   }
 
 //Sorts by form name and id and sends updates info to components
@@ -23,9 +23,9 @@ function App() {
     e.preventDefault();
     setInfo({
       ...information,
-      general:{ firstlast:'',email:'',phone:'' }, 
-      education:{ school:'',major:'' },
-      work:{ company:'' },
+      general:{ identify:uniqid(),firstlast:'',email:'',phone:'' }, 
+      education:{ identify:uniqid(),school:'',major:'' },
+      work:{ identify:uniqid(),company:'' },
       [id.name]: information[id.name].concat(information[id.id]),
   
     })
