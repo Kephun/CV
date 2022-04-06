@@ -2,16 +2,17 @@ import React from "react";
 
 function Work(props) {
     const { array } = props
+    
     return (
-        <ul>
-            {array.map((work) => {
+        <div>
+            {array.map((element) => {
                 return (
                     <div>
-                        <div>{work.company}</div>
+                        {element.company}
                     </div>
-                )})
-            }
-        </ul>
+                )
+            })}
+        </div>
     )
 }
 

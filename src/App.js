@@ -8,7 +8,7 @@ import Work from './components/work'
 function App() {
 
 //Initial state with all objects, keys, empty values and arrays to push / display from
-  const [ information, setInfo ] = useState({general:{firstlast:'',email:'',phone:''}, education:{school:'',major:''}, work:{company:''}, arrayG: [], arrayE: [], arrayW: []})
+  const [ information, setInfo ] = useState({ general:{ firstlast:'',email:'',phone:'' }, education:{ school:'',major:'' }, work:{ company:'' }, arrayG: [], arrayE: [], arrayW: []})
 
 
 //Takes any input to sort properly to its designated spot based on name / id 
@@ -23,8 +23,11 @@ function App() {
     e.preventDefault();
     setInfo({
       ...information,
+      general:{ firstlast:'',email:'',phone:'' }, 
+      education:{ school:'',major:'' },
+      work:{ company:'' },
       [id.name]: information[id.name].concat(information[id.id]),
-      [id.id]: {}
+  
     })
   }
 

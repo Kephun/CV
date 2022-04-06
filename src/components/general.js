@@ -2,18 +2,19 @@ import React from "react";
 
 function General(props) {
     const { array } = props
+
     return (
-        <ul>
-            {array.map((general) => {
+        <div>
+            {array.map((element) => {
                 return (
-                <div>
-                    <div>{general.firstlast}</div>
-                    <div>{general.email}</div>
-                    <div>{general.phone}</div>
-                </div>
-                )})
-            }
-        </ul>
+                    <div>
+                        {element.firstlast}
+                        {element.email}
+                        {element.phone}
+                    </div>
+                )
+            })}
+        </div>
     )
 }
 
