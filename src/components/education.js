@@ -4,11 +4,12 @@ function Education(props) {
     const { array } = props;
     console.log(array)
     return (
-        <div>
+        <div className = 'education'>
+            <h1>Education</h1>
             {array.map((element) => {
                 return (
                     <div key={element.identify}>
-                        {element.school}
+                        {element.school}<br/>
                         {element.major}
                     </div>
                 )

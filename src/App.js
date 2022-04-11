@@ -32,26 +32,29 @@ function App() {
   }
 
   return (
-    <div>
-      <form id='general' name='arrayG' onSubmit={onSubmit}>
-        <input id='general' name='firstlast' onChange={changeInfo} value={information.general.firstlast}></input>
-        <input id='general' name='email' onChange={changeInfo} value={information.general.email}></input>
-        <input id='general' name='phone' onChange={changeInfo} value={information.general.phone}></input> 
-        <button type='submit'>Submit information!</button>
-      </form>
-      <form id='education' name='arrayE' onSubmit={onSubmit}>
-        <input id='education' name='school' onChange={changeInfo} value={information.education.school}></input> 
-        <input id='education' name='major' onChange={changeInfo} value={information.education.major}></input> 
-        <button type='submit'>Submit information!</button>
-      </form>
-      <form id='work' name='arrayW' onSubmit={onSubmit}>
-      <input id='work' name='company' onChange={changeInfo} value={information.work.company}></input> 
-      <button type='submit'>Submit information!</button>
-      </form>
-      <General array={information.arrayG} />
-      <Education array={information.arrayE} />
-      <Work array={information.arrayW} />
-
+    <div className ='container'>
+      <div className = 'form'>
+        <form id='general' name='arrayG' onSubmit={onSubmit}>
+          <input placeholder='First and Last name' id='general' name='firstlast' onChange={changeInfo} value={information.general.firstlast}/><br/>
+          <input placeholder='Email@email.com' id='general' name='email' onChange={changeInfo} value={information.general.email}/><br/>
+          <input placeholder='Phone #' id='general' name='phone' onChange={changeInfo} value={information.general.phone}/><br/>
+          <button type='submit'>Submit information</button>
+        </form>
+        <form id='education' name='arrayE' onSubmit={onSubmit}>
+          <input placeholder='School' id='education' name='school' onChange={changeInfo} value={information.education.school}/><br/>
+          <input placeholder='Major' id='education' name='major' onChange={changeInfo} value={information.education.major}/><br/>
+          <button type='submit'>Submit information</button>
+        </form>
+        <form id='work' name='arrayW' onSubmit={onSubmit}>
+        <input placeholder='Company Name' id='work' name='company' onChange={changeInfo} value={information.work.company}/><br/>
+        <button type='submit'>Submit information</button>
+        </form>
+      </div>
+      <div className = 'resume'>
+        <General array={information.arrayG} />
+        <Education array={information.arrayE} />
+        <Work array={information.arrayW} />
+      </div>
     </div>
   );
 }
