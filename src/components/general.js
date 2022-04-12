@@ -2,15 +2,16 @@ import React from "react";
 
 function General(props) {
     const { array } = props
-    console.log(array[0])
+    const display = array.information.arrayG
     return(
         <div className = 'general'>
-            {array.map((element) => {
+            {display.map((element) => {
                     return (
-                    <div>
-                        <h1>{element.firstlast}</h1>
-                        <div>{element.email} || {element.phone}</div>
-                    </div>
+                        <ul key={element.identify}>{element.firstlast}
+                            <li>{element.phone}</li>
+                            <li>{element.email}</li>
+                            <button onClick={array.test}>fauofhaw</button>
+                        </ul>
                     )
             })}
         </div>

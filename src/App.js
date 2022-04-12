@@ -6,9 +6,12 @@ import Education from './components/education';
 import Work from './components/work';
 
 function App() {
-
 //Initial state with all objects, keys, empty values and arrays to push / display from
-  const [ information, setInfo ] = useState({ general:{ identify: uniqid(),firstlast:'',email:'',phone:'' }, education:{ identify: uniqid(),school:'',major:'' }, work:{ identify: uniqid(),company:'' }, arrayG: [], arrayE: [], arrayW: []})
+  const general = { identify: uniqid(),firstlast:'',email:'',phone:'' };
+  const education = { identify: uniqid(),school:'',major:'' };
+  const work = { identify: uniqid(),company:'' };
+
+  const [ information, setInfo ] = useState({ general, education, work, arrayG: [], arrayE: [], arrayW: []})
 
 
 //Takes any input to sort properly to its designated spot based on name / id 
@@ -23,13 +26,22 @@ function App() {
     e.preventDefault();
     setInfo({
       ...information,
-      general:{ identify:uniqid(),firstlast:'',email:'',phone:'' }, 
-      education:{ identify:uniqid(),school:'',major:'' },
-      work:{ identify:uniqid(),company:'' },
       [id.name]: information[id.name].concat(information[id.id]),
-  
+      
     })
   }
+
+  const test = (e) => {
+    console.log(information.arrayG)
+    const indexOfObject = information.arrayG.findIndex(object => {
+      return object.id === e.target.key
+    })
+    setInfo({...information, arrayG:information.arrayG.splice(indexOfObject, 1)})
+    console.log(information.arrayG)
+  }
+
+  
+  const display = {information, test}
 
   return (
     <div className ='container'>
@@ -51,7 +63,7 @@ function App() {
         </form>
       </div>
       <div className = 'resume'>
-        <General array={information.arrayG} />
+        <General array={display} />
         <Education array={information.arrayE} />
         <Work array={information.arrayW} />
       </div>

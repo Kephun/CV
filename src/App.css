@@ -23,7 +23,8 @@ form {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
 }
 
 .form {
@@ -38,19 +39,28 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  height: 100vh;
-  width: 45%;
+  height: 842px;
+  width: 595px;
   border: 1px solid black;
+  padding: 20px;
 }
 
 .general {
+  height: 102px;
+  text-align: center;
+}
 
+ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .education {
-
+  height:350px;
 }
 
 .work {
-
+  height:350px;
 }

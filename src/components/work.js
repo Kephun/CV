@@ -2,7 +2,7 @@ import React from "react";
 
 function Work(props) {
     const { array } = props
-    console.log(array)
+    
     return (
         <div className = 'work'>
             <h1>Experience</h1>
